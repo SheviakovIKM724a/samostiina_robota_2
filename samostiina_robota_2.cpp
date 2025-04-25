@@ -1,42 +1,29 @@
 ﻿#include <iostream>
 using namespace std;
 
-// Функція для сортування масиву за зростанням
-void sortArray(int arr[], int size) {
-    for (int i = 0; i < size - 1; i++) {
-        for (int j = 0; j < size - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                // Міняємо місцями елементи
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
-        }
-    }
-}
-
-// Функція для виведення масиву
-void printArray(int arr[], int size) {
-    for (int i = 0; i < size; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
+// Функція для обчислення площі прямокутника
+double area(double length, double width) {
+    return length * width; // Площа = довжина * ширина
 }
 
 int main() {
 
     system("chcp 1251 > nul"); //підключення української мови
 
-    int arr[] = { 5, 3, 8, 1, 2 };
-    int size = 5;  // Явно вказуємо розмір масиву
+    double l, w;
 
-    cout << "Масив до сортування: ";
-    printArray(arr, size);
+    // Введення сторін прямокутника
+    cout << "Введіть довжину прямокутника: ";
+    cin >> l;
 
-    sortArray(arr, size);
+    cout << "Введіть ширину прямокутника: ";
+    cin >> w;
 
-    cout << "Масив після сортування: ";
-    printArray(arr, size);
+    // Виклик функції для обчислення площі
+    double a = area(l, w);
+
+    // Виведення результату
+    cout << "Площа прямокутника: " << a << endl;
 
     return 0;
 }
